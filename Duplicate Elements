@@ -1,0 +1,17 @@
+class Geeks {
+    // print the elements which appear more than
+    // once in the array in sorted order
+    public static void SortedDuplicates(int arr[], int n) {
+        HashMap<Integer,Integer>map=new HashMap<>();
+        TreeSet<Integer>t=new TreeSet<>();
+        for(int num : arr){
+            map.put(num,map.getOrDefault(num,0)+1);
+            if(map.get(num)>1)
+            t.add(num);
+        }
+        if(t.size()==0)
+        t.add(-1);
+        for(int num : t)
+        System.out.print(num+" ");
+    }
+}
